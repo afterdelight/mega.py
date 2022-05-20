@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*
 
-from __future__ import absolute_import
-
 import os
 from codecs import open
 
@@ -22,12 +20,13 @@ with open('HISTORY.md', 'r', encoding='utf-8') as hist_file:
 
 setup(name='mega.py',
       version='1.0.9.dev0',
+      python_requires='>=3.6',
       packages=find_packages('src', exclude=('tests', )),
       package_dir={'': 'src'},
       include_package_data=True,
       zip_safe=False,
       url='https://github.com/odwyersoftware/mega.py',
-      description='Python lib for the Mega.co.nz API',
+      description='Python lib for the Mega.nz API',
       long_description=readme + '\n\n' + history,
       long_description_content_type='text/markdown',
       author='O\'Dwyer Software',
@@ -40,4 +39,10 @@ setup(name='mega.py',
           'Programming Language :: Python',
           'Programming Language :: Python :: 3',
           'Topic :: Internet :: WWW/HTTP',
-      ])
+      ],
+      entry_points={
+          'console_scripts': [
+              'meganz=mega.maincli:maincli'
+          ]
+      },
+      )

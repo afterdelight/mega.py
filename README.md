@@ -1,11 +1,9 @@
 Mega.py
 =======
 
-[![Build
-Status](https://travis-ci.org/odwyersoftware/mega.py.png?branch=master)](https://travis-ci.org/odwyersoftware/mega.py)
 [![Downloads](https://pypip.in/d/mega.py/badge.png)](https://crate.io/packages/mega.py/)  [![PyPI version](https://badge.fury.io/py/mega.py.svg)](https://pypi.org/project/mega.py/)
 
-Python library for the [Mega.co.nz](https://mega.nz/aff=Zo6IxNaHw14)
+Python library for the [Mega.nz](https://mega.nz/aff=Zo6IxNaHw14)
 API, currently supporting:
 
 -   login
@@ -34,6 +32,12 @@ Run the following command, or run setup from the latest github source.
 
 ```python
 pip install mega.py
+```
+
+or, for installing after having cloned the repo:
+```sh
+cd mega.py
+pip install .
 ```
 
 ### Import mega.py
@@ -123,7 +127,7 @@ m.upload('myfile.doc', folder[0])
 ```python
 file = m.find('myfile.doc')
 m.download(file)
-m.download_url('https://mega.co.nz/#!utYjgSTQ!OM4U3V5v_W4N5edSo0wolg1D5H0fwSrLD3oLnLuS9pc')
+m.download_url('https://mega.nz/#!utYjgSTQ!OM4U3V5v_W4N5edSo0wolg1D5H0fwSrLD3oLnLuS9pc')
 m.download(file, '/home/john-smith/Desktop')
 # specify optional download filename (download_url() supports this also)
 m.download(file, '/home/john-smith/Desktop', 'myfile.zip')
@@ -132,9 +136,9 @@ m.download(file, '/home/john-smith/Desktop', 'myfile.zip')
 ### Import a file from URL, optionally specify destination folder
 
 ```python
-m.import_public_url('https://mega.co.nz/#!utYjgSTQ!OM4U3V5v_W4N5edSo0wolg1D5H0fwSrLD3oLnLuS9pc')
+m.import_public_url('https://mega.nz/#!utYjgSTQ!OM4U3V5v_W4N5edSo0wolg1D5H0fwSrLD3oLnLuS9pc')
 folder_node = m.find('Documents')[1]
-m.import_public_url('https://mega.co.nz/#!utYjgSTQ!OM4U3V5v_W4N5edSo0wolg1D5H0fwSrLD3oLnLuS9pc', dest_node=folder_node)
+m.import_public_url('https://mega.nz/#!utYjgSTQ!OM4U3V5v_W4N5edSo0wolg1D5H0fwSrLD3oLnLuS9pc', dest_node=folder_node)
 ```
 
 ### Create a folder
